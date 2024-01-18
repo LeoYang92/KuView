@@ -19,8 +19,11 @@
         "vue"
     ],
      "rules": {
+		"strict": ["error","global"],  // 严格模式
+		"indent": ["error", "tab"],  // 代码制表符缩进规范
 		"semi": ["error", "always"], // 强制使用分号
 		"comma-dangle": ["error", "never"], // 多行对象和数组的最后不要加逗号
-		"vue/html-self-closing": "error"
+		"vue/html-self-closing": "error",  // 检测强制使用单闭合标签
+		"vue/html-indent": ["error", "tab"]   // 强制vue html标签缩进
     }
 }

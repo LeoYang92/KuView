@@ -6,12 +6,11 @@
 </template>
 
 <script lang="ts">
-	export default {
-		mounted() {
-			console.log("Test");
-		}
-		
-	};
+export default {
+	mounted() {
+		console.log("Test");
+	}
+};
 </script>
 
 <style scoped lang="scss">

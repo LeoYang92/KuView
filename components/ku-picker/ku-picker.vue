@@ -3,9 +3,9 @@
 </template>
 
 <script>
-	export default {
-		name: "ku-picker"
-	};
+export default {
+	name: "ku-picker"
+};
 </script>
 
 <style scoped lang="scss">

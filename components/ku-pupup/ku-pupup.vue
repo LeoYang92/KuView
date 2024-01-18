@@ -1,11 +1,12 @@
 <template>
-	<ku-pupup />
+	<ku-mask>
+		<view class="kuPupup kuComponents">
+			弹窗
+		</view>
+	</ku-mask>
 </template>
 
 <script>
-	export default {
-		name: "ku-picker"
-	};
 </script>
 
 <style scoped lang="scss">

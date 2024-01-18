@@ -1,0 +1,8 @@
+/**
+ * 由于nvue不支持box-sizing所有封装一下，减少需要条件编译的代码
+ */
+@mixin borderBox {
+	/* #ifndef APP-NVUE */
+	box-sizing: border-box;
+	/* #endif */
+}

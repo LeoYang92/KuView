@@ -1,0 +1,17 @@
+@import "./mixins.scss";
+/* #ifndef APP-NVUE */
+// 适配nvue默认flex-
+view{
+	display: flex;
+	flex-direction: column;
+	align-content: flex-start;
+}
+/* #endif */
+
+
+/*组件公共样式*/
+.kuComponents{
+	&__text{
+		font-size: $ku-font-size-base;
+	}
+}

@@ -14,7 +14,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-	@import "../../libs/css/components.scss";
+	@import "../../core/css/components.scss";
 	.kuMask{
 		background-color: red;
 	}

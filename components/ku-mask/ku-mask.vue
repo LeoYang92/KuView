@@ -1,21 +1,24 @@
 <template>
-	<view class="kuMask kuComponents">
-		<slot />
-		<image />
-	</view>
+	<ku-transition>
+		<cover-view class="kuMask kuComponents">
+			<slot />
+		</cover-view>
+	</ku-transition>
 </template>
 
 <script lang="ts">
-export default {
-	mounted() {
-		console.log("Test");
-	}
-};
 </script>
 
 <style scoped lang="scss">
 	@import "../../core/css/components.scss";
+	$ku-mask-background-color:rgba(0,0,0,0.4) !default;
 	.kuMask{
-		background-color: red;
+		position: fixed;
+		@include zIndex;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		background-color: $ku-mask-background-color;
 	}
 </style>

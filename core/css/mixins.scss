@@ -6,3 +6,22 @@
 	box-sizing: border-box;
 	/* #endif */
 }
+
+/**
+ * 浮动z-index层级
+ * @params $level 
+ * 	@value lower  
+ * 	@value middle
+ * 	@value top
+ */
+@mixin zIndex($level: lower) {
+	@if $level == lower {
+		z-index: 1000;
+	} @else if $level == middle {
+		z-index: 1100;
+	} @else if $level == top{
+		z-index: 1200;
+	} @else {
+		z-index: 1000;
+	}
+}

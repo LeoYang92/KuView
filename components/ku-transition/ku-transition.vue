@@ -4,7 +4,15 @@
 		class="kuTransition kuComponents"
 		:class="{
 			'kuTransition__fadeHide': mode == 'fade' && !motion,
-			'kuTransition__fadeShow': mode == 'fade' && motion
+			'kuTransition__fadeShow': mode == 'fade' && motion,
+			'kuTransition__slideUpHide': mode == 'slide-up' && !motion,
+			'kuTransition__slideUpShow': mode == 'slide-up' && motion,
+			'kuTransition__fadeUpHide': mode == 'fade-up' && !motion,
+			'kuTransition__fadeUpShow': mode == 'fade-up' && motion,
+			'kuTransition__slideDownHide': mode == 'slide-down' && !motion,
+			'kuTransition__slideDownShow': mode == 'slide-down' && motion,
+			'kuTransition__slideScaleHide': mode == 'scale' && !motion,
+			'kuTransition__slideScaleShow': mode == 'scale' && motion
 		}"
 		:style="componentStyle"
 	>
@@ -45,22 +53,28 @@ export default {
 	},
 	mounted() {		
 		if(this.show) {
-			this.open()
+			this.open();
 		}
 	},
 	methods: {
 		open() {
+			this.$emit("beforeEnter");
 			this.display = true;
 			clearTimeout(transitionTimer);
+			this.$emit("enter");
 			transitionTimer = setTimeout(() => {
 				this.motion = true;
+				this.$emit("afterEnter");
 			},100);
 		},
 		close() {
+			this.$emit("beforeLeave");
 			this.motion = false;
 			clearTimeout(transitionTimer);
+			this.$emit("leave");
 			transitionTimer = setTimeout(() => {
 				this.display = false;
+				this.$emit("afterLeave");
 			},this.duration); 
 		}
 	},
@@ -79,13 +93,57 @@ export default {
 		transition-duration: $ku-transition-duration;
 		transition-timing-function: $ku-transition-timing-function;
 		transition-delay: $ku-transition-delay;
+		/*淡入淡出隐藏*/
 		&__fadeHide {
 			transition-property: opacity;
 			opacity: 0;
 		}
+		/*淡入淡出显示*/
 		&__fadeShow{
 			transition-property: opacity;
 			opacity: 1;
+		}
+		/*上划隐藏*/
+		&__slideUpHide{
+			transition-property: transform;
+			transform: translateY(100%);
+		}
+		/*上划显示*/
+		&__slideUpShow{ 
+			transition-property: transform;
+			transform: translateY(0);
+		}
+		/*上滑淡入隐藏*/
+		&__fadeUpHide{
+			transition-property: transform,opacity;
+			transform: translateY(100%);
+			opacity: 0;
+		}
+		/*上滑淡入显示*/
+		&__fadeUpShow{
+			transition-property: transform,opacity;
+			transform: translateY(0);
+			opacity: 1;
+		}
+		/*下滑隐藏*/
+		&__slideDownHide{
+			transition-property: transform;
+			transform: translateY(-100%);
+		}
+		/*下滑显示*/
+		&__slideDownShow{ 
+			transition-property: transform;
+			transform: translateY(0);
+		}
+		/*缩放隐藏*/
+		&__slideScaleHide{
+			transition-property: transform;
+			transform: scale(0);
+		}
+		/*缩放显示*/
+		&__slideScaleShow{
+			transition-property: transform;
+			transform: scale(1);
 		}
 	}
 </style>

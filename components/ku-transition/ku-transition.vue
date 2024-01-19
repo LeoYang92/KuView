@@ -44,7 +44,9 @@ export default {
 		}
 	},
 	mounted() {		
-		console.log(this.componentStyle)
+		if(this.show) {
+			this.open()
+		}
 	},
 	methods: {
 		open() {

@@ -24,14 +24,15 @@
 <script lang="ts">
 import props from './props';
 import events from './events';
-let transitionTimer = null;
 export default {
 	data() {
 		return {
 			// 是否显示组件
 			display: false as boolean,
 			// 是否启动动画
-			motion: false as boolean
+			motion: false as boolean,
+			// 动画定时器
+			transitionTimer: null
 		};
 	},
 	watch: {
@@ -61,9 +62,9 @@ export default {
 		open() {
 			this.$emit("beforeEnter");
 			this.display = true;
-			clearTimeout(transitionTimer);
+			clearTimeout(this.transitionTimer);
 			this.$emit("enter");
-			transitionTimer = setTimeout(() => {
+			this.transitionTimer = setTimeout(() => {
 				this.motion = true;
 				this.$emit("afterEnter");
 			},100);
@@ -71,16 +72,16 @@ export default {
 		close() {
 			this.$emit("beforeLeave");
 			this.motion = false;
-			clearTimeout(transitionTimer);
+			clearTimeout(this.transitionTimer);
 			this.$emit("leave");
-			transitionTimer = setTimeout(() => {
+			this.transitionTimer = setTimeout(() => {
 				this.display = false;
 				this.$emit("afterLeave");
 			},this.duration); 
 		}
 	},
 	beforeUnmount () {
-		clearTimeout(transitionTimer);
+		clearTimeout(this.transitionTimer);
 	}
 };
 </script>

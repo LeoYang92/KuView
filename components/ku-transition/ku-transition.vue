@@ -15,6 +15,7 @@
 			'kuTransition__slideScaleShow': mode == 'scale' && motion
 		}"
 		:style="componentStyle"
+		@click="$emit('click')"
 	>
 		<slot />
 	</view>

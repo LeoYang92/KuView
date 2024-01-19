@@ -1,5 +1,6 @@
 export default {
 	emits: [
+		"click", // 点击
 		"beforeEnter",  // 动画执行前
 		"enter",  // 正在执行动画
 		"afterEnter",  // 动画执行完成

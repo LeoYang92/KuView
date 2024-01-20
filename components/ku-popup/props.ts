@@ -29,6 +29,13 @@ export default
 			default: zIndex.middle
 		},
 		/**
+		 * 显示弹窗显示时长
+		 */
+		duration: {
+			type: [String,Number],
+			default: 100
+		},
+		/**
 		 * 点击遮罩层是否关闭，默认关闭
 		 */
 		clickClose: {

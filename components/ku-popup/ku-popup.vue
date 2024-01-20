@@ -1,14 +1,16 @@
 <template>
-	<view class="pupup">
+	<view class="popup">
 		<ku-mask 
 			:show="show"
+			:duration="duration"
 			@click="maskClick" />
 		<ku-transition
 			:show="show"
 			mode="slide-up"
+			:duration="duration"
 			:custom-style="transitionStyle"
 		>
-			<view>3333</view>
+			<slot />
 		</ku-transition>
 	</view>
 </template>

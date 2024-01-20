@@ -1,5 +1,5 @@
 <template>
-	<ku-pupup />
+	<ku-popup />
 </template>
 
 <script>

@@ -5,7 +5,7 @@ export default
 	props: {
 		...commonProps,
 		/**
-		 * 是否显示组件
+		 * 是否显示组件,v-mode:show 双向绑定
 		 */
 		show: {
 			type: Boolean,

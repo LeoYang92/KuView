@@ -2,9 +2,7 @@
 	<view class="pupup">
 		<ku-mask 
 			:show="show"
-			@click="maskClick"
-		>
-		</ku-mask>
+			@click="maskClick" />
 		<ku-transition
 			:show="show"
 			mode="slide-up"
@@ -16,7 +14,7 @@
 </template>
 
 <script>
-import props from './props'
+import props from './props';
 export default {
 	mixins: [props],
 	computed: {
@@ -25,7 +23,7 @@ export default {
 			return this.show;
 		},
 		transitionStyle() {
-			return this.setTransitionStyle()
+			return this.setTransitionStyle();
 		}
 	},
 	methods: {
@@ -37,25 +35,26 @@ export default {
 				position:'fixed',
 				zIndex: this.zIndex,
 				background: 'red'
-			}
-			switch(this.type) {
-				case 'bottom':
-					style.bottom = 0;
-					style.left = 0;
+			};
+			switch(this.type) 
+			{
+			case 'bottom':
+				style.bottom = 0;
+				style.left = 0;
 				break;
 			}
-			return style
+			return style;
 		},
 		/**
 		 * 点击遮罩层
 		 */
 		maskClick() {
 			if(this.clickClose) {
-				this.$emit("update:show",false)
+				this.$emit("update:show",false);
 			}
 		}
 	}
-}
+};
 </script>
 
 <style scoped lang="scss">

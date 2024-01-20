@@ -35,11 +35,11 @@ export default {
 		 * 点击
 		 */
 		clickMask() {
-			this.$emit("click")
+			this.$emit("click");
 			if(this.clickClose) this.$emit("update:show",false);
 		}
 	}
-}
+};
 </script>
 
 <style scoped lang="scss">

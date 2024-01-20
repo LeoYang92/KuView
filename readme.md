@@ -17,4 +17,4 @@
 - [Mask 遮罩层](components/ku-mask/README.md)
 - [Transition 动画](components/ku-transition/README.md)
 - [Gap 间隔快](components/ku-gap/README.md)
-- [SafeArea 安全区域填充](components/ku-safe-eara/README.md)
+- [SafeArea 安全区域填充](components/ku-safe-area/README.md)

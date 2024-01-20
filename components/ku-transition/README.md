@@ -21,10 +21,10 @@
 | mode | 动画模式 | String | "" | [mode可选值列表](#mode可选值) |
 | duration | 动画执行时间，单位ms | Number\|String | 300ms | - |
 | delay | 动画延时执行，单位ms | Number\|String | 0 | - |
-| timingFunction | 过渡函数 | String | ease-out | [timingFunction可选值列表](#可选值) |
+| timingFunction | 过渡函数 | String | ease-out | [timingFunction可选值列表](#timingFunction可选值) |
 
 
-#### mode可选值 <a name="section-1"></a>
+#### mode可选值
 - 缺失值，不使用任何动画
 - fade 淡入
 - fade-up 上滑淡入

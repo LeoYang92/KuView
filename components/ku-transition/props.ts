@@ -12,7 +12,7 @@ export default
 		},
 		/**
 		 * 动画模式
-		 * @task  添加适配更多动画模式
+		 * @todo  添加适配更多动画模式
 		 * @value default 不使用动画
 		 * @value fade 淡入
 		 * @value fade-up 上滑淡入

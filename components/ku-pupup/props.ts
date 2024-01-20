@@ -13,6 +13,7 @@ export default
 		},
 		/**
 		 * 弹性显示方向
+		 * @todo 目前仅仅支持bottom方向弹窗，后续需要支持center、top、keft、right方向的弹窗
 		 * @default center 居中弹窗
 		 * @value bottom 底部弹窗
 		 */

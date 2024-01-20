@@ -11,6 +11,8 @@
 			:custom-style="transitionStyle"
 		>
 			<slot />
+			
+			<ku-safe-area bg-color="red" />
 		</ku-transition>
 	</view>
 </template>
@@ -35,8 +37,7 @@ export default {
 		setTransitionStyle() {
 			const style = {
 				position:'fixed',
-				zIndex: this.zIndex,
-				background: 'red'
+				zIndex: this.zIndex
 			};
 			switch(this.type) 
 			{

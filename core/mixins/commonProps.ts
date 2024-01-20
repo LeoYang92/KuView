@@ -1,3 +1,8 @@
+/*
+* @Author: LeoYang
+* @Date: 2024-01-20 23:47:22
+* @Description: 组件共用prop
+*/
 export default
 {
 	/**

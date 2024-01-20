@@ -22,6 +22,7 @@
 | duration | 动画执行时间，单位ms | Number\|String | 300ms | - |
 | delay | 动画延时执行，单位ms | Number\|String | 0 | - |
 | timingFunction | 过渡函数 | String | ease-out | [timingFunction可选值列表](#timingFunction可选值) |
+| customStyle | 自定义样式 | Object | - | - |
 
 
 #### mode可选值

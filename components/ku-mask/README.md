@@ -29,6 +29,7 @@ export default {
 | duration | 遮罩层动画显示时长 | String\|Number| 300 | - |
 | opacity | 遮罩层透明度 | String\|Number | 0.5 | 0-1 |
 | clickClose | 点击遮罩层是否关闭 | Boolean | true | false |
+| customStyle | 自定义样式 | Object | - | - |
 
 ### Events
 | 事件名 | 说明 | 回调参数 |

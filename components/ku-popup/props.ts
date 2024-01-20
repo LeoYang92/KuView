@@ -36,6 +36,20 @@ export default
 			default: 100
 		},
 		/**
+		 * 是否适配底部安全区域
+		 */
+		safeAreaBottom: {
+			type: Boolean,
+			default: true
+		},
+		/**
+		 * 底部安全区域背景颜色
+		 */
+		safeAreaBottomBg: {
+			type: String,
+			default: ""
+		},
+		/**
 		 * 点击遮罩层是否关闭，默认关闭
 		 */
 		clickClose: {

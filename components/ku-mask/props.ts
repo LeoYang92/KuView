@@ -30,7 +30,7 @@ export default
 		 */
 		opacity: {
 			type: [String,Number],
-			default: 0.5
+			default: 0.4
 		},
 		/**
 		 * 点击遮罩层是否关闭，默认关闭

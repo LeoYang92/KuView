@@ -3,24 +3,34 @@
 		<ku-mask 
 			:show="show"
 			:duration="duration"
+			:customStyle="maskStyle"
+			:opacity="maskOpacity"
 			@click="maskClick" />
 		<ku-transition
 			:show="show"
 			mode="slide-up"
 			:duration="duration"
 			:custom-style="transitionStyle"
+			@beforeEnter="$emit('beforOpen')"
+			@afterEnter="$emit('afterOpen')"
+			@beforeLeave="$emit('beforClose')"
+			@afterLeave="$emit('afterClose')"
 		>
 			<slot />
-			
-			<ku-safe-area bg-color="red" />
+			<ku-safe-area 
+				v-if="safeAreaBottom"
+				:bg-color="safeAreaBottomBg"
+				position="bottom" 
+			/>
 		</ku-transition>
 	</view>
 </template>
 
 <script>
 import props from './props';
+import events from './events'
 export default {
-	mixins: [props],
+	mixins: [props,events],
 	computed: {
 		// 遮罩层显示状态
 		maskShow() {
@@ -52,7 +62,7 @@ export default {
 		 * 点击遮罩层
 		 */
 		maskClick() {
-			if(this.clickClose) {
+			if(this.clickMakeClose) {
 				this.$emit("update:show",false);
 			}
 		}

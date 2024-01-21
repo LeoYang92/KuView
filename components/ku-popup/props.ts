@@ -47,12 +47,28 @@ export default
 		 */
 		safeAreaBottomBg: {
 			type: String,
-			default: ""
+			default: "transparent"
+		},
+		/**
+		 * 弹层遮罩层透明度
+		 */
+		maskOpacity: {
+			type: [String,Number],
+			default: 0.4
+		},
+		/**
+		 * 遮罩层样式
+		 */
+		maskStyle: {
+			type: Object,
+			default() {
+				return {}
+			}
 		},
 		/**
 		 * 点击遮罩层是否关闭，默认关闭
 		 */
-		clickClose: {
+		clickMakeClose: {
 			type: Boolean,
 			default: true
 		}

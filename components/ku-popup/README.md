@@ -45,9 +45,11 @@
 | type | 弹出方式 | String | 'center' | [可选值列表](#type可选值) |
 | zIndex | 定位层级 | String\|Number | 1000 | - |
 | duration | 弹出动画时长，单位ms | String\|Number | 100 | - |
-| clickClose | 点击遮罩层是否关闭 | Boolean | true | false |
+| clickMaskClose | 点击遮罩层是否关闭 | Boolean | true | false |
 | safeAreaBottom | 是否适配底部安全区域 | Boolean | true | false |
-| safeAreaBottomBg | 底部适配区域的背景颜色 | String | '' | 其他颜色值|
+| safeAreaBottomBg | 底部适配区域的背景颜色 | String | 'transparent' | css颜色值 |
+| maskOpacity | 遮罩层透明度 | String\Number | 0.4 | 0-1 |
+| maskStyle | 遮罩层样式 | Object | - | - |
 | customStyle | 自定义样式 | Object | - | - |
 
 #### type可选值
@@ -56,3 +58,12 @@
 - top 顶部弹出	（开发中）
 - left 左边弹出	（开发中）
 - right 右边弹出	（开发中）
+
+
+### Events
+| 事件名 | 说明 | 回调参数 |
+|:------ |:------|:------|
+| beforOpen | 弹层打开前触发 | - |
+| afterOpen | 弹层打开后触发 | - |
+| beforClose| 弹层关闭前触发 | - |
+| afterClose| 弹层关闭后触发 | - |

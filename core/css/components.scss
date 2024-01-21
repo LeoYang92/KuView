@@ -1,11 +1,11 @@
 @import "./mixins.scss";
 /* #ifndef APP-NVUE */
 // 适配nvue默认flex-
-view{
-	display: flex;
-	flex-direction: column;
-	align-content: flex-start;
-}
+// view{
+// 	display: flex;
+// 	flex-direction: column;
+// 	justify-content: flex-start;
+// }
 /* #endif */
 
 

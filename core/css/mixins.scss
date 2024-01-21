@@ -25,3 +25,14 @@
 		z-index: 1000;
 	}
 }
+
+/**
+ * 默认弹性盒子
+ */
+@mixin flex ($direction:column,$justifyContent:flex-start) {
+	/* #ifndef APP-NVUE */
+	display: flex;
+	/* #endif */
+	flex-direction: $direction;
+	justify-content: $justifyContent;
+}

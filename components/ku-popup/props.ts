@@ -62,7 +62,7 @@ export default
 		maskStyle: {
 			type: Object,
 			default() {
-				return {}
+				return {};
 			}
 		},
 		/**

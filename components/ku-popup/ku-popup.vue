@@ -28,14 +28,10 @@
 
 <script>
 import props from './props';
-import events from './events'
+import events from './events';
 export default {
 	mixins: [props,events],
 	computed: {
-		// 遮罩层显示状态
-		maskShow() {
-			return this.show;
-		},
 		transitionStyle() {
 			return this.setTransitionStyle();
 		}
@@ -64,6 +60,7 @@ export default {
 		maskClick() {
 			if(this.clickMakeClose) {
 				this.$emit("update:show",false);
+				this.$emit("maskClose");
 			}
 		}
 	}

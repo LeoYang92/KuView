@@ -9,21 +9,20 @@
 		<view class="kuPicker kuComponents">
 			<slot name="header">
 				<view class="kuPicker__header">
-					<view class="kuPicker__header-calcel">
-						取消
+					<view class="kuPicker__header-cancel">
+						<text class="kuText">取消</text>
 					</view>
 					<view class="kuPicker__header-title">
 						{{ title }}
 					</view>
 					<view class="kuPicker__header-confirm">
-						确认
+						<text class="kuText">确认</text>
 					</view>
 				</view>
 			</slot>
 			<picker-view
 				class="kuPicker__picker"
-				indicator-style="height:90rpx;" 
-				style="flex: 1;"
+				indicator-style="height:50px;"
 			>
 				<picker-view-column>
 					<view 
@@ -31,7 +30,7 @@
 						v-for="item in datas" 
 						:key="item"
 					>
-						{{ item }}
+						<text class="kuText">{{ item }}</text>
 					</view>
 				</picker-view-column>
 				<picker-view-column>
@@ -40,7 +39,7 @@
 						v-for="item in datas1" 
 						:key="item"
 					>
-						{{ item }}
+						<text class="kuText">{{ item }}</text>
 					</view>
 				</picker-view-column>
 			</picker-view>
@@ -81,14 +80,24 @@ export default {
 		background-color: #FFFFFF;
 		&__header{
 			@include flex(row);
+			align-items: center;
 			height: 80rpx;
-			background-color: red;
+			padding:0 30rpx;
+			@include borderBox;
+			&-title{
+				flex: 1;
+				text-align: center;
+			}
+			&-cancel,&-confirm{
+				background-color: blue;
+			}
 		}
 		&__picker{
 			background-color: #FFFFFF;
 			text-align: center;
+			flex: 1;
 			&-item{
-				line-height: 90rpx; 
+				line-height: 50px; 
 			}
 		}
 	}

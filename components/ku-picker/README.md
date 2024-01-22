@@ -12,4 +12,8 @@
 ### Props
 |参数|说明|类型|默认值|可选值|
 |:------|:------|:------|:------|:------|
-| customStyle | 自定义样式 | Object | - | - |
+| show | 是否显示组件v-model:show双向绑定 | Boolean | false | true |
+| title | 组件标题 | String | '' | - |
+| itemHeight | 选项高度，组件总高度=itemHeight*visibleItemNum | Number\|String | 50 | - |
+| visibleItemNum | 可见选项数量，组件总高度=itemHeight*visibleItemNum | Number\|String | 5 | - |
+| clickClose | 点击遮罩层是否关闭 | Boolean | true | false |

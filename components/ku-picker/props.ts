@@ -17,6 +17,20 @@ export default {
 			default: ""
 		},
 		/**
+		 * 每个选项的高度
+		 */
+		itemHeight: {
+			type: [Number,String],
+			default: 50
+		},
+		/**
+		 * 可见选项数量
+		 */
+		visibleItemNum: {
+			type: [Number,String],
+			default: 5
+		},
+		/**
 		 * 点击遮罩层是否关闭
 		 */
 		clickMakeClose:  {

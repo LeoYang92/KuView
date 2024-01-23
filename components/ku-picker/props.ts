@@ -9,8 +9,6 @@ export default {
 			type: Boolean,
 			default: false
 		},
-		
-		// S公共参数
 		/**
 		 * 标题
 		 */
@@ -65,7 +63,5 @@ export default {
 				return [];
 			}
 		}
-		// E公共参数
-		
 	}
 };

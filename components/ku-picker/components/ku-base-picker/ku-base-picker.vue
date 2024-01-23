@@ -9,19 +9,19 @@
 		>
 			<picker-view-column 
 				class="kuBasePicker__picker-column"
-				v-for="column in columns"
-				:key="column"
+				v-for="(column,columns_index) in columns"
+				:key="columns_index"
 			>
 				<view 
 					class="kuBasePicker__picker-column-item"
-					v-for="item in column" 
-					:key="item"
+					v-for="(item,column_index) in column" 
+					:key="column_index"
 				>
 					<text 
 						class="kuText kuBasePicker__picker-column-item-text"
 						:style="picker.textStyle"
 					>
-						{{ item }}
+						{{ picker.columnItemType == 'string' ? item : item[picker.textKey] }}
 					</text>
 				</view>
 			</picker-view-column>
@@ -52,7 +52,16 @@ export default {
 		value() {
 			let value = [];
 			if(this.picker.mode == 'selector') {
-				value.push(this.picker.value);
+				let index = this.picker.value;
+				if(this.picker.columnItemType == 'object') {
+					for(let i=0;i<this.columns.length;i++) {
+						if(this.picker.columns[i][this.picker.valueKey] == this.picker.value) {
+							index = i;
+							break;
+						}
+					}
+				}
+				value.push(parseInt(index));  
 			}
 			return value;
 		}

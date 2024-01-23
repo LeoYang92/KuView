@@ -38,8 +38,8 @@ export default {
 	name: "ku-picker",
 	data() {
 		return {
-			// change修改临时存储的值
-			changeValue: '' as string|number
+			// change修改时记录修改后的下标
+			current: '' as string|number|Array<string|number>
 		};
 	},
 	mixins: [props,events],
@@ -74,6 +74,14 @@ export default {
 				height: unitOfSize(this.itemHeight),
 				lineHeight: unitOfSize(this.itemHeight)
 			};
+		},
+		/**
+		 * 每列value值的类型 string|object
+		 */
+		columnItemType() {
+			if(this.mode == 'selector') {
+				return typeof this.columns[0]
+			}
 		}
 	},
 	methods: {
@@ -81,10 +89,21 @@ export default {
 		 * 确认
 		 */
 		confirm() {
-			this.$emit("update:value",this.changeValue);
-			this.$emit("confirm",this.changeValue);
+			if(this.mode == 'selector') {
+				if(this.columnItemType == 'object') {
+					let value = this.columns[Number(this.current)][this.valueKey];
+					this.$emit("update:value",value);
+					this.$emit("confirm",value); 
+				} else {
+					this.$emit("update:value",this.current);
+					this.$emit("confirm",this.current);
+				}
+			}
 			this.close();
 		},
+		/**
+		 * 取消
+		 */
 		cancel() {
 			this.$emit("cancel");
 			this.close();
@@ -100,12 +119,14 @@ export default {
 		 * 列值修改
 		 */
 		change(value:Array<string|number>) {
-			let result:string|number = '';
 			if(this.mode == 'selector') {
-				result = value[0];
+				this.current = value[0];
+				if(this.columnItemType == 'object') {
+					this.$emit("change",this.columns[this.current][this.valueKey]);
+				} else {
+					this.$emit("change",this.current);
+				}
 			}
-			this.changeValue = result;
-			this.$emit("change",result);
 		}
 	}
 };

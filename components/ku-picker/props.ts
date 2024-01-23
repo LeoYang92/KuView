@@ -62,6 +62,22 @@ export default {
 			default() {
 				return [];
 			}
+		},
+		/**
+		 * 如果columns是Array<object>模式
+		 * 显示数据的键名
+		 */
+		textKey: {
+			type: String,
+			default: 'text'
+		},
+		/**
+		 * 如果columns是Array<object>模式
+		 * 数据的value的键名
+		 */
+		valueKey: {
+			type: String,
+			default: 'value'
 		}
 	}
 };

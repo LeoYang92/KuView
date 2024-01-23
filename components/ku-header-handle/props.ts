@@ -1,5 +1,5 @@
 import commonProps from '../../core/mixins/commonProps';
-import Theme from '../../theme'
+import Theme from '../../theme';
 export default {
 	props: {
 		...commonProps,
@@ -26,7 +26,7 @@ export default {
 		// 确认文字颜色
 		confirmColor: {
 			type: String,
-			default: Theme.colorPrimayr
+			default: Theme.colorPrimary
 		}
 	}
 };

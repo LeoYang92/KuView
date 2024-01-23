@@ -9,12 +9,30 @@ export default {
 			type: Boolean,
 			default: false
 		},
+		
+		// S公共参数
 		/**
 		 * 标题
 		 */
 		title: {
 			type: String,
 			default: ""
+		},
+		/**
+		 * 选择器类型
+		 * @default selector 默认单列选择器
+		 */
+		mode: {
+			type: String,
+			default: "selector"
+		},
+		/**
+		 * 默认显示的值，每列的值
+		 * mode = selector 数据下标 Number||String
+		 */
+		value: {
+			type: [Number,String,Array],
+			default: 0
 		},
 		/**
 		 * 每个选项的高度
@@ -36,6 +54,18 @@ export default {
 		clickMakeClose:  {
 			type: Boolean,
 			default: false
+		},
+		/**
+		 * 数据列表，不同的mode不同的数据列表结构
+		 * selector []一维数组
+		 */
+		columns: {
+			type: Array,  // || Array<Object>
+			default() {
+				return [];
+			}
 		}
+		// E公共参数
+		
 	}
 };

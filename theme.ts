@@ -28,4 +28,4 @@ export default {
 	bgColorWhite: '#ffffff', // 白色背景颜色
 	bgColorGrey: '#f8f8f8', // 灰色
 	bgColorHover: '#f1f1f1' //点击状态颜色
-}
+};

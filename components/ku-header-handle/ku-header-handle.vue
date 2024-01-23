@@ -1,6 +1,9 @@
 <template>
 	<view class="kuHeaderHandle">
-		<view class="kuHeaderHandle__item kuHeaderHandle__cancel">
+		<view 
+			class="kuHeaderHandle__item kuHeaderHandle__cancel"
+			@click="$emit('cancel')"
+		>
 			<text 
 				class="kuText kuHeaderHandle__item-text kuHeaderHandle__cancel-text"
 				:style="cancelTextStyle"
@@ -13,7 +16,10 @@
 				{{ title }}
 			</text>
 		</view>
-		<view class="kuHeaderHandle__item kuHeaderHandle__confirm">
+		<view 
+			class="kuHeaderHandle__item kuHeaderHandle__confirm"
+			@click="$emit('confirm')"
+		>
 			<text 
 				class="kuText kuHeaderHandle__item-text kuHeaderHandle__confirm-text"
 				:style="confirmTextStyle"
@@ -35,18 +41,20 @@ export default {
 	name: 'ku-header-handle',
 	mixins: [props],
 	computed: {
+		// 取消文字样式
 		cancelTextStyle() {
 			return {
 				color: this.cancelColor
-			}
+			};
 		},
+		// 确认文字样式
 		confirmTextStyle() {
 			return {
 				color: this.confirmColor
-			}
+			};
 		}
 	}
-}
+};
 </script>
 
 <style scoped lang="scss">
@@ -57,9 +65,10 @@ export default {
 		@include flex(row);
 		justify-content: space-between;
 		align-items: center;
-		padding: 0 30rpx;
+		padding: 0 15rpx;
 		@include borderBox;
 		height: 70rpx;
+		background-color: $ku-bg-color-white;
 		&__item{
 			&-text{
 				font-size: $ku-font-size-sm;

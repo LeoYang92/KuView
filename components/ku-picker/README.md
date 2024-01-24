@@ -72,6 +72,7 @@ export default {
 |参数|说明|类型|默认值|可选值|
 |:------|:------|:------|:------|:------|
 | columns | 选择器数据 | Array | [] | - |
-| value | 显示的数据下标 | Number\|String| 0 | - |
+| value | 默认选择的数据下标或者value值,v-model:value双向绑定 | Number\|String| 0 | - |
+| text | 默认显示文本信息,v-model:text双向绑定 | Number\|String| 0 | - |
 | @confirm | 确认,回调参数({index,value}) => {index,value} | EventHandle | - | - |
 | @change | 切换选择值({index,value}) => {index,value} | EventHandle | - | - |

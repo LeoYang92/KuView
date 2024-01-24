@@ -4,8 +4,8 @@
 			class="kuBasePicker__picker"
 			:indicator-style="picker.indicatorStyle"
 			:style="picker.pickerStyle"
-			:value="value"
-			@change="change"
+			:value="values"
+			@change="({detail}) => change(detail.value)"
 		>
 			<picker-view-column 
 				class="kuBasePicker__picker-column"
@@ -33,6 +33,11 @@
 import events from './events';
 export default {
 	name: 'ku-base-picker',
+	data() {
+		return {
+			values: [] as Array<number>
+		};
+	},
 	mixins: [events],
 	inject: {
 		picker: {
@@ -47,31 +52,33 @@ export default {
 				columns.push(this.picker.columns);
 			}
 			return columns;
-		},
-		// 列默认选择的值
-		value() {
-			let value = [];
-			if(this.picker.mode == 'selector') {
-				let index = this.picker.value;
-				if(this.picker.columnItemType == 'object') {
-					for(let i=0;i<this.columns.length;i++) {
-						if(this.picker.columns[i][this.picker.valueKey] == this.picker.value) {
-							index = i;
-							break;
-						}
-					}
-				}
-				value.push(parseInt(index));  
-			}
-			return value;
+		}
+	},
+	mounted() {
+		if(this.picker.mode == 'selector') {
+			this.initSelectorValue();
 		}
 	},
 	methods: {
 		/**
 		 * 列选中值修改
 		 */
-		change({detail}){
-			this.$emit("change",detail.value);
+		change(value:Array<number>){
+			this.$emit("change",value);
+		},
+		/**
+		 * 初始化单列数据value
+		 */
+		initSelectorValue() {
+			const { picker } = this;
+			let index = picker.value;
+			if(picker.columnItemType === 'object') {
+				index = picker.columns.findIndex((column:object) => {
+					return column[picker.valueKey] === picker.value;
+				});
+			}
+			this.values = [parseInt(index)];
+			this.change(this.values);
 		}
 	}
 };	

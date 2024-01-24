@@ -73,5 +73,5 @@ export default {
 |:------|:------|:------|:------|:------|
 | columns | 选择器数据 | Array | [] | - |
 | value | 显示的数据下标 | Number\|String| 0 | - |
-| @confirm | 确认,回调参数(value) => {value} | EventHandle | - | - |
-| @change | 切换选择值(value) => {value} | EventHandle | - | - |
+| @confirm | 确认,回调参数({index,value}) => {index,value} | EventHandle | - | - |
+| @change | 切换选择值({index,value}) => {index,value} | EventHandle | - | - |

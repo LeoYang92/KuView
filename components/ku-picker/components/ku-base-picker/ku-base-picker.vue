@@ -72,13 +72,20 @@ export default {
 		initSelectorValue() {
 			const { picker } = this;
 			let index = picker.value;
+			// 是否触发value初始化,用来在ku-picker触发update:text事件
+			let triggerInit:boolean = false;
+	
 			if(picker.columnItemType === 'object') {
-				index = picker.columns.findIndex((column:object) => {
-					return column[picker.valueKey] === picker.value;
-				});
+				index = picker.columns.findIndex((column:object) =>column[picker.valueKey] === picker.value);
+				this.values = [index >= 0 ? index : 0];
+				triggerInit = index >= 0;
+			} else {
+				index = parseInt(index);
+				this.values = [index ? index : 0];
+				if(index) triggerInit = true;
 			}
-			this.values = [parseInt(index)];
 			this.change(this.values);
+			if(triggerInit) this.$emit("init");
 		}
 	}
 };	

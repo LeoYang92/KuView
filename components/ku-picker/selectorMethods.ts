@@ -16,9 +16,21 @@ export default {
 		// 触发确认事件
 		selectorConfirm():void {
 			const { current,columns,valueKey,columnItemType } = this;
-			const selectedValue = columnItemType === 'object' ? columns[current][valueKey] : columns[current];
+			const selectedValue = columnItemType === 'object' ? columns[current][valueKey] : current;
 			this.$emit("update:value",selectedValue);
+			this.$emit("update:text",this.selectSelectedText());
 			this.$emit("confirm",this.callBackParams());  
+		},
+		// value初始化完成触发事件
+		selectorInit():void {
+			this.$emit("update:text",this.selectSelectedText());
+		},
+		/**
+		 * 获取当前value对应的text值
+		 */
+		selectSelectedText():string {
+			const { current,columns,textKey,columnItemType } = this;
+			return columnItemType === 'object' ? columns[current][textKey] : columns[current]; 
 		},
 		/**
 		 * 获取回调参数

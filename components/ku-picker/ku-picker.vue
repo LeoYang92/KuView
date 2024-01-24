@@ -17,6 +17,7 @@
 			
 			<ku-base-picker
 				@change="change"
+				@init="init"
 			/>
 		</view>
 	</ku-popup>
@@ -88,6 +89,14 @@ export default {
 		}
 	},
 	methods: {
+		/**
+		 * 组件value初始化完成
+		 */
+		init() {
+			if(this.mode == 'selector') {
+				this.selectorInit()
+			}
+		},
 		/**
 		 * 确认
 		 */

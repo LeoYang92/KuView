@@ -55,7 +55,9 @@ export default {
 	},
 	mounted() {		
 		if(this.show) {
-			this.open();
+			setTimeout(() => {
+				this.open();
+			},100)
 		}
 	},
 	methods: {

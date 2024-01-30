@@ -12,7 +12,9 @@
 | title | 组件标题 | String | '' | - |
 | itemHeight | 选项高度，组件总高度=itemHeight*visibleItemNum | Number\|String | 50 | - |
 | visibleItemNum | 可见选项数量，组件总高度=itemHeight*visibleItemNum | Number\|String | 5 | - |
-| clickClose | 点击遮罩层是否关闭 | Boolean | true | false |
+| clickMakeClose | 点击遮罩层是否关闭 | Boolean | true | false |
+| textKey | 如果columns是Array\<object\>类型,选择器显示文字的键值 | String | 'text' | - |
+| valueKey | 如果columns是Array\<object\>类型,选择器value值的键值 | String | 'value' | - |
 | @cancel | 点击取消 | EventHandle | - | - |
 | @close | 关闭触发 | EventHandle | - | - |
 

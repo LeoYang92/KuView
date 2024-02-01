@@ -51,7 +51,7 @@ export default {
 		 */
 		clickMakeClose:  {
 			type: Boolean,
-			default: true
+			default: false
 		},
 		/**
 		 * 数据列表，不同的mode不同的数据列表结构

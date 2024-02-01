@@ -17,7 +17,6 @@
 			
 			<ku-base-picker
 				@change="change"
-				@init="init"
 			/>
 		</view>
 	</ku-popup>
@@ -34,7 +33,6 @@
 import { unitOfSize } from '../../core/utils/utils';
 import props from './props';
 import events from './events';
-import selectorMethods from './selectorMethods';
 import kuBasePicker from './components/ku-base-picker/ku-base-picker.vue';
 export default {
 	name: "ku-picker",
@@ -44,7 +42,7 @@ export default {
 			current: '' as string|number|Array<string|number>
 		};
 	},
-	mixins: [props,events,selectorMethods],
+	mixins: [props,events],
 	components: {
 		kuBasePicker
 	},
@@ -81,28 +79,25 @@ export default {
 		 * 每列value值的类型 string|object
 		 */
 		columnItemType() {
-			let type = "";
 			if(this.mode == 'selector') {
-				type =  typeof this.columns[0];
+				return typeof this.columns[0]
 			}
-			return type;
 		}
 	},
 	methods: {
-		/**
-		 * 组件value初始化完成
-		 */
-		init() {
-			if(this.mode == 'selector') {
-				this.selectorInit()
-			}
-		},
 		/**
 		 * 确认
 		 */
 		confirm() {
 			if(this.mode == 'selector') {
-				this.selectorConfirm(); 
+				if(this.columnItemType == 'object') {
+					let value = this.columns[Number(this.current)][this.valueKey];
+					this.$emit("update:value",value);
+					this.$emit("confirm",value); 
+				} else {
+					this.$emit("update:value",this.current);
+					this.$emit("confirm",this.current);
+				}
 			}
 			this.close();
 		},
@@ -125,10 +120,14 @@ export default {
 		 */
 		change(value:Array<string|number>) {
 			if(this.mode == 'selector') {
-				this.selectorChange(value);
+				this.current = value[0];
+				if(this.columnItemType == 'object') {
+					this.$emit("change",this.columns[this.current][this.valueKey]);
+				} else {
+					this.$emit("change",this.current);
+				}
 			}
 		}
 	}
 };
 </script>
-

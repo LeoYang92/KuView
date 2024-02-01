@@ -12,7 +12,9 @@
 | title | 组件标题 | String | '' | - |
 | itemHeight | 选项高度，组件总高度=itemHeight*visibleItemNum | Number\|String | 50 | - |
 | visibleItemNum | 可见选项数量，组件总高度=itemHeight*visibleItemNum | Number\|String | 5 | - |
-| clickClose | 点击遮罩层是否关闭 | Boolean | true | false |
+| clickMakeClose | 点击遮罩层是否关闭 | Boolean | true | false |
+| textKey | 如果columns是Array\<object\>类型,选择器显示文字的键值 | String | 'text' | - |
+| valueKey | 如果columns是Array\<object\>类型,选择器value值的键值 | String | 'value' | - |
 | @cancel | 点击取消 | EventHandle | - | - |
 | @close | 关闭触发 | EventHandle | - | - |
 
@@ -72,6 +74,7 @@ export default {
 |参数|说明|类型|默认值|可选值|
 |:------|:------|:------|:------|:------|
 | columns | 选择器数据 | Array | [] | - |
-| value | 显示的数据下标 | Number\|String| 0 | - |
-| @confirm | 确认,回调参数(value) => {value} | EventHandle | - | - |
-| @change | 切换选择值(value) => {value} | EventHandle | - | - |
+| value | 默认选择的数据下标或者value值,v-model:value双向绑定 | Number\|String| 0 | - |
+| text | 默认显示文本信息,v-model:text双向绑定 | Number\|String| 0 | - |
+| @confirm | 确认,回调参数({index,value}) => {index,value} | EventHandle | - | - |
+| @change | 切换选择值({index,value}) => {index,value} | EventHandle | - | - |

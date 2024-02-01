@@ -25,12 +25,19 @@ export default {
 			default: "selector"
 		},
 		/**
-		 * 默认显示的值，每列的值
+		 * 默认选中的值，每列的值
 		 * mode = selector 数据下标 Number||String
 		 */
 		value: {
 			type: [Number,String,Array],
 			default: 0
+		},
+		/**
+		 * 默认选中显示的文本信息
+		 */
+		text: {
+			type: [Number,String,Array],
+			default: ''
 		},
 		/**
 		 * 每个选项的高度

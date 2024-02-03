@@ -17,6 +17,7 @@ export default {
 		selectorConfirm():void {
 			const { current,columns,valueKey,columnItemType } = this;
 			const selectedValue = columnItemType === 'object' ? columns[current][valueKey] : current;
+			console.log(selectedValue)
 			this.$emit("update:value",selectedValue);
 			this.$emit("update:text",this.selectSelectedText());
 			this.$emit("confirm",this.callBackParams());  
@@ -42,6 +43,29 @@ export default {
 				item: columns[current],
 				value: columnItemType === 'object' ? columns[current][valueKey] : columns[current]
 			};
+		},
+		/**
+		 * 初始化单列数据value
+		 */
+		initSelectorValue() {
+			const { value,columnItemType,columns,valueKey } = this;
+			let index = value;
+			// 是否触发value初始化,用来在ku-picker触发update:text事件
+			let triggerInit:boolean = false;
+			
+			if(columnItemType === 'object') {
+				index = columns.findIndex((column:object) =>column[valueKey] === value);
+				this.values = [index >= 0 ? index : 0];
+				triggerInit = index >= 0;
+			} else {
+				index = parseInt(index);
+				this.values = [index ? index : 0];
+				if(index) triggerInit = true;
+			}
+			this.change(this.values);
+			if(triggerInit){
+				this.selectorInit();
+			}
 		}
 	}
 };

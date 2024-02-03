@@ -18,7 +18,7 @@
 			
 			<ku-base-picker
 				@change="change"
-				@init="init"
+				:values="values"
 			/>
 		</view>
 	</ku-popup>
@@ -42,7 +42,8 @@ export default {
 	data() {
 		return {
 			// change修改时记录修改后的下标
-			current: '' as string|number|Array<string|number>
+			current: '' as string|number|Array<string|number>,
+			values: []
 		};
 	},
 	mixins: [props,events,selectorMethods],
@@ -84,10 +85,18 @@ export default {
 		columnItemType() {
 			let type = "";
 			if(this.mode == 'selector') {
-				type =  typeof this.columns[0];
+				type = typeof this.columns[0];
 			}
 			return type;
 		}
+	},
+	watch: {
+		value() {
+			this.init();
+		}
+	},
+	mounted() {
+		this.init();
 	},
 	methods: {
 		/**
@@ -95,7 +104,7 @@ export default {
 		 */
 		init() {
 			if(this.mode == 'selector') {
-				this.selectorInit();
+				this.initSelectorValue();
 			}
 		},
 		/**

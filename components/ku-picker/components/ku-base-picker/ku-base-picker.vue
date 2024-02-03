@@ -31,14 +31,10 @@
 
 <script lang="ts">
 import events from './events';
+import porps from './props';
 export default {
 	name: 'ku-base-picker',
-	data() {
-		return {
-			values: [] as Array<number>
-		};
-	},
-	mixins: [events],
+	mixins: [porps,events],
 	inject: {
 		picker: {
 			from: 'picker'
@@ -54,38 +50,12 @@ export default {
 			return columns;
 		}
 	},
-	mounted() {
-		if(this.picker.mode == 'selector') {
-			this.initSelectorValue();
-		}
-	},
 	methods: {
 		/**
 		 * 列选中值修改
 		 */
 		change(value:Array<number>){
 			this.$emit("change",value);
-		},
-		/**
-		 * 初始化单列数据value
-		 */
-		initSelectorValue() {
-			const { picker } = this;
-			let index = picker.value;
-			// 是否触发value初始化,用来在ku-picker触发update:text事件
-			let triggerInit:boolean = false;
-	
-			if(picker.columnItemType === 'object') {
-				index = picker.columns.findIndex((column:object) =>column[picker.valueKey] === picker.value);
-				this.values = [index >= 0 ? index : 0];
-				triggerInit = index >= 0;
-			} else {
-				index = parseInt(index);
-				this.values = [index ? index : 0];
-				if(index) triggerInit = true;
-			}
-			this.change(this.values);
-			if(triggerInit) this.$emit("init");
 		}
 	}
 };	

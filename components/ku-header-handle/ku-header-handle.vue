@@ -37,7 +37,7 @@
 * @Description: 头部操作栏组件，确认、取消、标题
 */
 import props from './props';
-import { unitOfSize } from '../../core/utils/utils'
+import { unitOfSize } from '../../core/utils/utils';
 export default {
 	name: 'ku-header-handle',
 	mixins: [props],

@@ -57,7 +57,7 @@ export default {
 		if(this.show) {
 			setTimeout(() => {
 				this.open();
-			},100)
+			},100);
 		}
 	},
 	methods: {

@@ -1,5 +1,5 @@
 <template>
-	<view class="kuHeaderHandle">
+	<view class="kuHeaderHandle" :style="componentStyle">
 		<view 
 			class="kuHeaderHandle__item kuHeaderHandle__cancel"
 			@click="$emit('cancel')"
@@ -37,6 +37,7 @@
 * @Description: 头部操作栏组件，确认、取消、标题
 */
 import props from './props';
+import { unitOfSize } from '../../core/utils/utils'
 export default {
 	name: 'ku-header-handle',
 	mixins: [props],
@@ -52,6 +53,14 @@ export default {
 			return {
 				color: this.confirmColor
 			};
+		},
+		// 组件样式
+		componentStyle() {
+			const style = {
+				borderRadius: `${unitOfSize(this.borderRadius)} ${unitOfSize(this.borderRadius)} 0 0`,
+				...this.customStyle
+			};
+			return style;
 		}
 	}
 };
@@ -61,6 +70,7 @@ export default {
 	@import "../../core/css/components.scss";
 	$cancel-color: $ku-text-color-grey !default;
 	$confirm-color: $ku-color-primary !default;
+	$border-radius: 0 !default;
 	.kuHeaderHandle{
 		@include flex(row);
 		justify-content: space-between;
@@ -69,6 +79,7 @@ export default {
 		@include borderBox;
 		height: 70rpx;
 		background-color: $ku-bg-color-white;
+		border-radius: $border-radius;
 		&__item{
 			&-text{
 				font-size: $ku-font-size-sm;

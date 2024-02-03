@@ -27,6 +27,11 @@ export default {
 		confirmColor: {
 			type: String,
 			default: Theme.colorPrimary
+		},
+		// 顶部左上和右上 边框圆角
+		borderRadius: {
+			type: [String,Number],
+			default: 0
 		}
 	}
 };

@@ -15,6 +15,7 @@
 | clickMakeClose | 点击遮罩层是否关闭 | Boolean | true | false |
 | textKey | 如果columns是Array\<object\>类型,选择器显示文字的键值 | String | 'text' | - |
 | valueKey | 如果columns是Array\<object\>类型,选择器value值的键值 | String | 'value' | - |
+| borderRadius | 左上、右上、边框圆角 | Number\|String | 0 | - |
 | @cancel | 点击取消 | EventHandle | - | - |
 | @close | 关闭触发 | EventHandle | - | - |
 

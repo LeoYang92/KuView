@@ -85,6 +85,13 @@ export default {
 		valueKey: {
 			type: String,
 			default: 'value'
+		},
+		/**
+		 * 顶部左上和右上 边框圆角
+		 */
+		borderRadius: {
+			type: [Number,String],
+			default: 0
 		}
 	}
 };

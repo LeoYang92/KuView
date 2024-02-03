@@ -10,6 +10,7 @@
 			<slot name="header">
 				<ku-header-handle 
 					:title="title" 
+					:border-radius="borderRadius"
 					@cancel="cancel"
 					@confirm="confirm"
 				/>
@@ -94,7 +95,7 @@ export default {
 		 */
 		init() {
 			if(this.mode == 'selector') {
-				this.selectorInit()
+				this.selectorInit();
 			}
 		},
 		/**

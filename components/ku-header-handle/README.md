@@ -17,6 +17,8 @@
 | title | 标题 | String | '' | - |
 | confirmText | 确认文字 | String | '确认' | - |
 | confirmColor | 确认文字颜色 | String | '#007aff' | css颜色值 |
+| borderRadius | 左上、右上、边框圆角 | Number\|String | 0 | - |
+| customStyle | 自定义样式 | Object | - | - |
 
 
 ### Events

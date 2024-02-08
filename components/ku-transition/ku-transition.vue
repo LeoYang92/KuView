@@ -5,14 +5,18 @@
 		:class="{
 			'kuTransition__fadeHide': mode == 'fade' && !motion,
 			'kuTransition__fadeShow': mode == 'fade' && motion,
-			'kuTransition__slideUpHide': mode == 'slide-up' && !motion,
-			'kuTransition__slideUpShow': mode == 'slide-up' && motion,
 			'kuTransition__fadeUpHide': mode == 'fade-up' && !motion,
 			'kuTransition__fadeUpShow': mode == 'fade-up' && motion,
+			'kuTransition__fadeDownHide': mode == 'fade-down' && !motion,
+			'kuTransition__fadeDownShow': mode == 'fade-down' && motion,
+			'kuTransition__slideUpHide': mode == 'slide-up' && !motion,
+			'kuTransition__slideUpShow': mode == 'slide-up' && motion,
 			'kuTransition__slideDownHide': mode == 'slide-down' && !motion,
 			'kuTransition__slideDownShow': mode == 'slide-down' && motion,
-			'kuTransition__slideScaleHide': mode == 'scale' && !motion,
-			'kuTransition__slideScaleShow': mode == 'scale' && motion
+			'kuTransition__scaleHide': mode == 'scale' && !motion,
+			'kuTransition__scaleShow': mode == 'scale' && motion,
+			'kuTransition__fadeScaleHide': mode == 'fade-scale' && !motion,
+			'kuTransition__fadeScaleShow': mode == 'fade-scale' && motion
 		}"
 		:style="componentStyle"
 		@click="$emit('click')"
@@ -107,16 +111,6 @@ export default {
 			transition-property: opacity;
 			opacity: 1;
 		}
-		/*上划隐藏*/
-		&__slideUpHide{
-			transition-property: transform;
-			transform: translateY(100%);
-		}
-		/*上划显示*/
-		&__slideUpShow{ 
-			transition-property: transform;
-			transform: translateY(0);
-		}
 		/*上滑淡入隐藏*/
 		&__fadeUpHide{
 			transition-property: transform,opacity;
@@ -129,6 +123,28 @@ export default {
 			transform: translateY(0);
 			opacity: 1;
 		}
+		/*下滑淡入隐藏*/
+		&__fadeDownHide{
+			transition-property: transform,opacity;
+			transform: translateY(-100%);
+			opacity: 0;
+		}
+		/*下滑淡入显示*/
+		&__fadeDownShow{
+			transition-property: transform,opacity;
+			transform: translateY(0);
+			opacity: 1;
+		}
+		/*上划隐藏*/
+		&__slideUpHide{
+			transition-property: transform;
+			transform: translateY(100%);
+		}
+		/*上划显示*/
+		&__slideUpShow{ 
+			transition-property: transform;
+			transform: translateY(0);
+		}
 		/*下滑隐藏*/
 		&__slideDownHide{
 			transition-property: transform;
@@ -140,14 +156,26 @@ export default {
 			transform: translateY(0);
 		}
 		/*缩放隐藏*/
-		&__slideScaleHide{
+		&__scaleHide{
 			transition-property: transform;
-			transform: scale(0);
+			transform: scale(0.3);
 		}
 		/*缩放显示*/
-		&__slideScaleShow{
+		&__scaleShow{
 			transition-property: transform;
 			transform: scale(1);
+		}
+		/*缩放淡出隐藏*/
+		&__fadeScaleHide{
+			transition-property: transform,opacity;
+			transform: scale(0.3);
+			opacity: 0;
+		}
+		/*缩放淡入显示*/
+		&__fadeScaleShow{ 
+			transition-property: transform,opacity;
+			transform: scale(1);
+			opacity: 1;
 		}
 	}
 </style>

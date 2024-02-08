@@ -30,7 +30,6 @@
 * @Date: 2024-01-23 08:10:38
 * @Description: 选择器组件，已经实现单列，多列选择器
 * @todo 需要实现多列联动
-* @todo 目前只实现了简单的纯数组选择器选项，后续需要适配数组下的对象选择器，比如：prop可以设置显示数据key和选取数据返回value的key
 */
 import { unitOfSize } from '../../core/utils/utils';
 import props from './props';

@@ -33,6 +33,7 @@
 - slide-up 上滑显示
 - slide-down 下滑显示
 - scale 缩放
+- fade-scale 缩放淡入
 
 #### timingFunction可选值
 - ease-out 默认，过渡快速开始，然后变慢的过渡效果

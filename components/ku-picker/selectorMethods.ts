@@ -17,7 +17,6 @@ export default {
 		selectorConfirm():void {
 			const { current,columns,valueKey,columnItemType } = this;
 			const selectedValue = columnItemType === 'object' ? columns[current][valueKey] : current;
-			console.log(selectedValue)
 			this.$emit("update:value",selectedValue);
 			this.$emit("update:text",this.selectSelectedText());
 			this.$emit("confirm",this.callBackParams());  

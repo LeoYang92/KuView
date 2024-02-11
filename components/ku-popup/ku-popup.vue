@@ -97,6 +97,24 @@ export default {
 					left:0
 				};
 				break;	
+			case 'left':
+				this.transition_mode = 'slide-right';
+				style = {
+					...baseStyle,
+					left:0,
+					top:0,
+					bottom:0
+				}
+				break;
+			case 'right':
+				this.transition_mode = 'slide-left';
+				style = {
+					...baseStyle,
+					right:0,
+					top:0,
+					bottom:0
+				}
+				break;
 			}
 			return style;
 		},

@@ -46,9 +46,9 @@
 | zIndex | 定位层级 | String\|Number | 1000 | - |
 | duration | 弹出动画时长，单位ms | String\|Number | 100 | - |
 | clickMaskClose | 点击遮罩层是否关闭 | Boolean | true | false |
-| safeAreaBottom | 是否适配底部安全区域 | Boolean | true | false |
+| safeAreaBottom | 是否适配底部安全区域（注意：type值为left和right时，该属性也有效，如不需要手动设置为false） | Boolean | true | false |
 | safeAreaBottomBg | 底部适配区域的背景颜色 | String | 'transparent' | css颜色值 |
-| safeAreaTop | 是否适配顶部状态栏高度 | Boolean | true | false |
+| safeAreaTop | 是否适配顶部状态栏高度（注意：type值为left和right时，该属性也有效，如不需要手动设置为false） | Boolean | true | false |
 | safeAreaTopBg | 顶部状态栏区域背景颜色 | String | 'transparent' | css颜色值 |
 | maskOpacity | 遮罩层透明度 | String\Number | 0.4 | 0-1 |
 | maskStyle | 遮罩层样式 | Object | - | - |

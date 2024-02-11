@@ -16,7 +16,15 @@
 			'kuTransition__scaleHide': mode == 'scale' && !motion,
 			'kuTransition__scaleShow': mode == 'scale' && motion,
 			'kuTransition__fadeScaleHide': mode == 'fade-scale' && !motion,
-			'kuTransition__fadeScaleShow': mode == 'fade-scale' && motion
+			'kuTransition__fadeScaleShow': mode == 'fade-scale' && motion,
+			'kuTransition__slideLeftHide' : mode == 'slide-left' && !motion,
+			'kuTransition__slideLeftShow' : mode == 'slide-left' && motion,
+			'kuTransition__slideRightHide' : mode == 'slide-right' && !motion,
+			'kuTransition__slideRightShow' : mode == 'slide-right' && motion,
+			'kuTransition__fadeLeftHide' : mode == 'fade-left' && !motion,
+			'kuTransition__fadeLeftShow' : mode == 'fade-left' && motion,
+			'kuTransition__fadeRightHide' : mode == 'fade-right' && !motion,
+			'kuTransition__fadeRightShow' : mode == 'fade-right' && motion
 		}"
 		:style="componentStyle"
 		@click="$emit('click')"
@@ -175,6 +183,50 @@ export default {
 		&__fadeScaleShow{ 
 			transition-property: transform,opacity;
 			transform: scale(1);
+			opacity: 1;
+		}
+		/*左滑隐藏*/
+		&__slideLeftHide{
+			transition-property: transform;
+			transform: translateX(100%);
+		}
+		/*左滑显示*/
+		&__slideLeftShow{ 
+			transition-property: transform;
+			transform: translateX(0);
+		}
+		/*右滑隐藏*/
+		&__slideRightHide{
+			transition-property: transform;
+			transform: translateX(-100%);
+		}
+		/*右滑显示*/
+		&__slideRightShow{ 
+			transition-property: transform;
+			transform: translateX(0);
+		}
+		/*左滑淡入隐藏*/
+		&__fadeLeftHide{
+			transition-property: transform,opacity;
+			transform: translateX(100%);
+			opacity:0;
+		}
+		/*左滑淡入显示*/
+		&__fadeLeftShow{ 
+			transition-property: transform,opacity;
+			transform: translateX(0);
+			opacity: 1;
+		}
+		/*右滑淡入隐藏*/
+		&__fadeRightHide{
+			transition-property: transform,opacity;
+			transform: translateX(-100%);
+			opacity:0;
+		}
+		/*右滑淡入显示*/
+		&__fadeRightShow{ 
+			transition-property: transform,opacity;
+			transform: translateX(0);
 			opacity: 1;
 		}
 	}

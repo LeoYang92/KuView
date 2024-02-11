@@ -17,8 +17,12 @@ export default
 		 * @value fade 淡入
 		 * @value fade-up 上滑淡入
 		 * @value fade-down 下滑淡入
+		 * @value fade-left 左滑淡入
+		 * @value fade-right 右滑淡入
 		 * @value slide-up 上滑显示
 		 * @value slide-down 下滑显示
+		 * @value slide-left 左滑显示
+		 * @value slide-right 右滑显示
 		 * @value scale 缩放显示
 		 * @value fade-scale  缩放淡入
 		 */

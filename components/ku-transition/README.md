@@ -30,8 +30,12 @@
 - fade 淡入
 - fade-up 上滑淡入
 - fade-down 下滑淡入
+- fade-left 左滑淡入
+- fade-right 右滑淡入
 - slide-up 上滑显示
 - slide-down 下滑显示
+- slide-left 左滑显示
+- slide-right 右滑显示
 - scale 缩放
 - fade-scale 缩放淡入
 

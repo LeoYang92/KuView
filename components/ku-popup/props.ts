@@ -50,6 +50,20 @@ export default
 			default: "transparent"
 		},
 		/**
+		 * 是否适配设置顶部状态栏高度
+		 */
+		safeAreaTop: {
+			type: Boolean,
+			default: true
+		},
+		/**
+		 * 顶部状态栏背景颜色
+		 */
+		safeAreaTopBg: {
+			type: String,
+			default: "transparent"
+		},
+		/**
 		 * 弹层遮罩层透明度
 		 */
 		maskOpacity: {

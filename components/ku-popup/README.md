@@ -48,6 +48,8 @@
 | clickMaskClose | 点击遮罩层是否关闭 | Boolean | true | false |
 | safeAreaBottom | 是否适配底部安全区域 | Boolean | true | false |
 | safeAreaBottomBg | 底部适配区域的背景颜色 | String | 'transparent' | css颜色值 |
+| safeAreaTop | 是否适配顶部状态栏高度 | Boolean | true | false |
+| safeAreaTopBg | 顶部状态栏区域背景颜色 | String | 'transparent' | css颜色值 |
 | maskOpacity | 遮罩层透明度 | String\Number | 0.4 | 0-1 |
 | maskStyle | 遮罩层样式 | Object | - | - |
 | customStyle | 自定义样式 | Object | - | - |
@@ -55,7 +57,7 @@
 #### type可选值
 - center 默认，居中弹窗 （完成）
 - bottom 底部弹出 （完成）
-- top 顶部弹出	（开发中）
+- top 顶部弹出	（完成）
 - left 左边弹出	（开发中）
 - right 右边弹出	（开发中）
 

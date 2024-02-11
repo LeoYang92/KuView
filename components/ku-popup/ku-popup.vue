@@ -17,9 +17,14 @@
 			@afterLeave="$emit('afterClose')"
 			@click="clickTransition"
 		>
+			<ku-safe-area
+				v-if="safeAreaTop && type != 'center'"
+				:bg-color="safeAreaTopBg"
+				position="top"
+			/>
 			<slot />
 			<ku-safe-area 
-				v-if="safeAreaBottom && type == 'bottom'"
+				v-if="safeAreaBottom && type != 'center'"
 				:bg-color="safeAreaBottomBg"
 				position="bottom" 
 			/>
@@ -84,6 +89,14 @@ export default {
 					left: 0
 				};
 				break;
+			case 'top':
+				this.transition_mode = 'slide-down';
+				style = {
+					...baseStyle,
+					top:0,
+					left:0
+				};
+				break;	
 			}
 			return style;
 		},

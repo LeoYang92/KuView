@@ -53,7 +53,7 @@
 | customStyle | 自定义样式 | Object | - | - |
 
 #### type可选值
-- center 默认，居中弹窗 （开发中）
+- center 默认，居中弹窗 （完成）
 - bottom 底部弹出 （完成）
 - top 顶部弹出	（开发中）
 - left 左边弹出	（开发中）

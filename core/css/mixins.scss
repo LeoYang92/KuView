@@ -29,7 +29,7 @@
 /**
  * 默认弹性盒子
  */
-@mixin flex ($direction:column,$justifyContent:flex-start) {
+@mixin flex ($direction:column) {
 	/* #ifndef APP-NVUE */
 	display: flex;
 	/* #endif */

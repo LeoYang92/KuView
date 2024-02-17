@@ -5,12 +5,12 @@
 		:duration="duration"
 	>
 		<view class="kuImage">
-			<ku-icon name="home"></ku-icon>
+			<ku-icon name="home" color="red" size="80rpx"></ku-icon>
 		</view>
 	</ku-transition>
 </template>
 
-<script lang="ts">
+<script lang="ts"> 
 	import props from './props'
 	export default {
 		name: 'ku-image',
@@ -32,6 +32,5 @@
 	.kuImage{
 		width: 100rpx;
 		height: 100rpx;
-		background-color: red;
 	}
 </style>

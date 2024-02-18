@@ -4,6 +4,7 @@
 
 <script lang="ts">
 import { unitOfSize } from '../../core/utils/utils';
+import Theme from '../../theme';
 import Icons from './icons';
 import props from './props';
 export default {
@@ -16,7 +17,7 @@ export default {
 		// 组件样式
 		componentStyle() {
 			const style = {
-				color: this.color,
+				color: this.getColor(),
 				fontSize: this.getSize(),
 				width: this.getSize(), 
 				...this.customStyle
@@ -49,9 +50,28 @@ export default {
 			}
 			return size;
 		},
+		/**
+		 * 获取图标颜色
+		 */
 		getColor(): string
 		{
-			let color:string = '';
+			let color:string = Theme.textColorBase;
+			switch(this.color) {
+			case 'primary':
+				color = Theme.colorPrimary;
+				break;
+			case 'success':
+				color = Theme.colorSuccess;
+				break;
+			case 'warning':
+				color = Theme.colorWarning;
+				break;
+			case 'error':
+				color = Theme.colorError;
+				break;
+			default:
+				color = this.color;
+			}
 			return color;
 		}
 	}

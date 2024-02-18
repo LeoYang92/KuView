@@ -5,7 +5,7 @@
 		:duration="duration"
 	>
 		<view class="kuImage">
-			<ku-icon name="home" color="red" />
+			<ku-icon name="home" />
 		</view>
 	</ku-transition>
 </template>

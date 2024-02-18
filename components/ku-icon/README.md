@@ -16,6 +16,6 @@
 |参数|说明|类型|默认值|可选值|
 |:------|:------|:------|:------|:------|
 | name | 图标标识 | String | - | - |
-| size | 图标大小 | Number\|String | 35rpx | - |
-| color | 图标颜色 | String | default($ku-text-color-base系统默认的文字颜色) | - |
+| size | 图标大小 | Number\|String | medium | min、max、其他尺寸） |
+| color | 图标颜色 | String | normal | primary、success、warning、error、其他十六进制颜色和命名颜色 |
 | customStyle | 自定义样式 | Object | - | - |

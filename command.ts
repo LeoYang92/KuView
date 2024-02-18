@@ -8,8 +8,10 @@ args.length == 0 && (() => {
 const className = args[0].charAt(0).toUpperCase() + args[0].slice(1);
 let ControllerClass = null;
 try {
-	ControllerClass = require(`./command/${className}`).default;
-	ControllerClass = new ControllerClass(args.slice(1));
+	import(`./command/${className}`).then((module) => {
+		ControllerClass = module.default;
+		new ControllerClass(args.slice(1));
+	});
 }catch(error) {
 	console.error(`无法加载${className}\n`,error);
 	process.exit(1);

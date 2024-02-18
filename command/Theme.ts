@@ -1,8 +1,8 @@
 class Theme
 {
 	constructor(argv:Array<string>) {
-		console.log(argv)
+		console.log(argv);
 	}
 }
 
-export default Theme
+export default Theme;

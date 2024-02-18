@@ -5,4 +5,4 @@ export default {
 	'kicon-photo-fill': '\ue651',
 	'kicon-person': '\ue655',
 	'kicon-person-fill': '\ue656'
-}
+};

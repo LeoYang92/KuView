@@ -44,7 +44,7 @@ export default {
 			 * type = center && mode = fade-scale
 			 */
 			transition_mode: ''
-		}
+		};
 	},
 	mixins: [props,events],
 	computed: {
@@ -79,8 +79,7 @@ export default {
 					top:0,
 					bottom:0
 				};
-				
-			break;
+				break;
 			case 'bottom':
 				this.transition_mode = 'slide-up';
 				style = {
@@ -104,7 +103,7 @@ export default {
 					left:0,
 					top:0,
 					bottom:0
-				}
+				};
 				break;
 			case 'right':
 				this.transition_mode = 'slide-left';
@@ -113,7 +112,7 @@ export default {
 					right:0,
 					top:0,
 					bottom:0
-				}
+				};
 				break;
 			}
 			return style;

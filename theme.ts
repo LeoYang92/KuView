@@ -7,9 +7,9 @@
 export default {
 	// 系统行为颜色
 	colorPrimary: '#007aff',  	// 系统默认颜色
-	colorSuccess: '#4cd964',  	// 成功相关颜色
-	colorWarning: '#f0ad4e',	// 警告相关颜色
-	colorError: '#dd524d',		// 错误相关颜色
+	colorSuccess: '#4cd964',  	// 成功颜色
+	colorWarning: '#f0ad4e',	// 警告颜色
+	colorError: '#dd524d',		// 错误颜色
 	
 	// 文字大小
 	fontSizeBase: '28rpx',  // 系统文字基础大小

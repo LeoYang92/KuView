@@ -5,27 +5,27 @@
 		:duration="duration"
 	>
 		<view class="kuImage">
-			<ku-icon name="home" color="red" size="80rpx"></ku-icon>
+			<ku-icon name="home" color="red" />
 		</view>
 	</ku-transition>
 </template>
 
 <script lang="ts"> 
-	import props from './props'
-	export default {
-		name: 'ku-image',
-		data() {
-			return {
-				transition_show: false as Boolean
-			}
-		},
-		mixins: [props],
-		mounted() {
-			setTimeout(() => {
-				this.transition_show = true
-			},10)
-		}
+import props from './props';
+export default {
+	name: 'ku-image',
+	data() {
+		return {
+			transition_show: false as boolean
+		};
+	},
+	mixins: [props],
+	mounted() {
+		setTimeout(() => {
+			this.transition_show = true;
+		},10);
 	}
+};
 </script>
 
 <style scoped lang="scss">

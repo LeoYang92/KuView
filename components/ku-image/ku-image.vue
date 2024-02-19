@@ -70,7 +70,7 @@ export default {
 				width: unitOfSize(this.width),
 				height: unitOfSize(this.height),
 				backgroundColor: this.status !== 1 ? this.laadingBgColor : 'transparent',
-				borderRadius: this.circle ? '1000000000px' : unitOfSize(this.radius)
+				borderRadius: this.circle ? '1000000px' : unitOfSize(this.radius)
 			};
 			return style;
 		},
@@ -79,7 +79,7 @@ export default {
 			return {
 				width: unitOfSize(this.width),
 				height: unitOfSize(this.height),
-				borderRadius: this.circle ? '1000000000px' : unitOfSize(this.radius)
+				borderRadius: this.circle ? '1000000px' : unitOfSize(this.radius)
 			};
 		}
 	},
@@ -120,10 +120,8 @@ export default {
 		@include flex(row);
 		align-items: center;
 		justify-content: center;
-		background-color: $ku-image-bg-color;
+		background-color: red;
 		&__image{
-			@include flex(row);
-			flex: 1;
 			/* #ifndef APP-NVUE */
 			box-sizing: border-box;
 			/* #endif */

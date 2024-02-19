@@ -7,7 +7,7 @@
 通过slot传入内容
 ```html
 <template>
-    等等添加
+    <ku-image width="500rpx" height="500rpx" src="/static/logo.png"></ku-image>
 </template>
 ```
 
@@ -32,3 +32,10 @@
 | @click | 点击图片触发 | HandleEvent | - | - |
 | @load | 图片加载成功触发，event.detail = {height:'图片高度px', width:'图片宽度px'} | HandleEvent | - | - |
 | @error | 图片加载失败触发，event.detail = {errMsg: 'something wrong'} | HandleEvent | - | - |
+
+
+### Slot
+| 名称 | 说明 |
+|:------|:------|
+|load|自定义图片加载时的内容|
+|error|自定义图片加载失败时的内容|

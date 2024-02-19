@@ -33,6 +33,15 @@ export const unitOfSize = function(size:number|string, unit:string = 'px'): stri
 };
 
 /**
+ * 分割一个尺寸单位，比如10rpx可以分割成[10,'rpx']，10px可以分割成[10,'px']
+ */
+export const splitSize = function(size:string): [number,string]
+{
+	const unit = size.match(/[a-zA-Z%]+/);
+	return [parseFloat(size),unit ? unit[0] : ''];
+};
+
+/**
  * 获取设备窗口信息
  */
 export const windowInfo = function(): object 

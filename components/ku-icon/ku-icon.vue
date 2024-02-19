@@ -28,8 +28,8 @@ export default {
 		// #ifdef APP-NVUE
 		const domModule = weex.requireModule('dom'); // eslint-disable-line
 		domModule.addRule('fontFace', {  
-			'fontFamily': 'kiconfont',  
-			'src': "url('https://at.alicdn.com/t/c/font_4437026_c93vw23gbw4.ttf')"  
+			'fontFamily': 'kiconfont',
+			'src': "url('https://at.alicdn.com/t/c/font_4437026_sgmpclr98cr.ttf')"  
 		});
 		// #endif
 	},
@@ -85,8 +85,8 @@ export default {
 	
 	/* #ifndef APP-NVUE */
 	@font-face {
-	  font-family: kiconfont;  /* Project id 4437026 */
-	  src: url('https://at.alicdn.com/t/c/font_4437026_c93vw23gbw4.ttf') format('truetype');
+		font-family: 'kiconfont';
+		src: url('https://at.alicdn.com/t/c/font_4437026_sgmpclr98cr.ttf') format('truetype');
 	}
 	/* #endif */
 	.kuIcon{

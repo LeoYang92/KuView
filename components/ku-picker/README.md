@@ -8,7 +8,7 @@
 |参数|说明|类型|默认值|可选值|
 |:------|:------|:------|:------|:------|
 | show | 是否显示组件v-model:show双向绑定 | Boolean | false | true |
-| mode | 选择器类型 | String | 'selector' |  [selector普通选择器](#mode = selector 普通选择器) |
+| mode | 选择器类型 | String | 'selector' |  [selector普通选择器](#mode=selector普通选择器) |
 | title | 组件标题 | String | '' | - |
 | itemHeight | 选项高度，组件总高度=itemHeight*visibleItemNum | Number\|String | 50 | - |
 | visibleItemNum | 可见选项数量，组件总高度=itemHeight*visibleItemNum | Number\|String | 5 | - |
@@ -21,7 +21,7 @@
 
 
 
-### mode = selector 普通选择器
+### mode=selector普通选择器
 #### 基本使用
 ```html
 <template>

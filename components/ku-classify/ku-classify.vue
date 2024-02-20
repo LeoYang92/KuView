@@ -9,8 +9,8 @@
 </template>
 
 <script lang="ts">
-	import kuLeft from './components/left/left.vue'
-	import kuRight from './components/right/right.vue'
+	import kuLeft from './components/left/left.vue';
+	import kuRight from './components/right/right.vue';
 	export default {
 		components: {
 			kuLeft,
@@ -23,5 +23,6 @@
 	@import "../../core/css/components.scss";
 	.kuClassify{
 		@include flex(row);
+		flex: 1;
 	}
 </style>

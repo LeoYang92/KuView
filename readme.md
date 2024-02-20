@@ -11,13 +11,15 @@
 ### 基础组件
 - [Image 图片组件](components/ku-image/README.md)
 - [Icon 图标组件](components/ku-icon/README.md)(图标库持续新增中...)
+- [Text 文本组件](components/ku-text/README.md)
+- Button 按钮组件,开发计划...
 
 ### 视图组件
 - [Popup 弹出层](components/ku-popup/README.md)
 - [Picker 选择器](components/ku-picker/README.md)
-
-### 功能组件
-- 等待开发1>通讯录组件，仅支持APP和微信小程序
+- Classify 分类组件，开发中...
+- Index 索引组件，开发计划...
+- Contacts 通讯录,开发计划...
 
 ### 其他组件
 - [Mask 遮罩层](components/ku-mask/README.md)
